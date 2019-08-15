@@ -57,3 +57,165 @@ html, body {
     height: 100%;
 }
 
+
+/* my resume */
+
+//Variables
+@padding: 1% 0;
+@title:'Libre Caslon Display', serif;
+@dark: crimson;
+@medium: lightpink;
+@light: mistyrose;
+
+//Mixins
+.display(){
+	display:flex;
+	justify-content: space-between;
+}
+.mobile(){
+	display:block;
+	width: 100%;
+}
+
+//Style
+img{
+	height:300px;
+	width:auto;
+}
+
+.container{
+	max-width: 800px;
+	width: 96%;
+	margin:2% auto;
+	padding: 1%;
+}
+
+h1{
+	font-size: 3.2rem;
+	padding: @padding;
+	font-family: @title;
+}
+
+h2{
+	font-size: 2.3rem;
+	padding: @padding;
+	font-family: @title;
+	@media(max-width:500px){
+		text-align: center;
+	}
+}
+
+h3{
+	font-size: 1.8rem;
+	padding:@padding;
+	font-family:@title;
+	@media(max-width:500px){
+		text-align: center;
+	}
+}
+
+h4{
+	font-size: 1.5rem;
+	padding: @padding;
+}
+
+p, li{
+	padding: @padding;
+	font-size: 1.2rem;
+	line-height: 1.2;
+}
+
+header{
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav{
+	.display();
+	width:400px;
+	margin-bottom: 1%;
+	
+	a{
+		text-decoration: none;
+		color:@dark;
+		font-size: 1.2rem;
+	}
+	@media(max-width:500px){
+		.display();
+		width:100%;
+	}
+}
+
+
+.top{
+	padding: 2%;
+	background-color:@medium;
+}
+
+.title{
+	border-bottom: 1px solid @dark;
+	padding:@padding;
+}
+
+button{
+	font-size: 1.2rem;
+	color:white;
+	background-color: @dark;
+	padding: 1%;
+	border-radius: 7px;
+}
+
+
+.middle{
+.display();
+@media(max-width:500px){
+	.mobile();
+}
+}
+
+.text{
+	width:45%;
+	margin:2% 0;
+	padding: @padding;
+	@media(max-width:500px){
+		.mobile();
+	}
+}
+
+.skills li{
+	padding:3% 2%;
+	border:1px solid @medium;
+	width:100%;
+	@media(max-width:500px){
+		text-align: center;
+	}
+}
+
+
+.table{
+	display:flex;
+	flex-direction: column;
+}
+
+.row{
+	.display();
+	
+	p{
+		width:150px;
+	}
+
+	&:nth-child(2n){
+	background-color:@light;
+	}
+}
+
+.heading{
+	font-weight: bolder;
+}
+
+footer{
+	text-align: center;
+	margin:5% 0 0 0;
+	padding: 3%;
+	background-color:@medium;
+}
